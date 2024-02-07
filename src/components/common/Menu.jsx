@@ -1,10 +1,25 @@
+import {Nav, Navbar, Container} from "react-bootstrap";
+import logo from '../../assets/Coffee_Logo.png';
 
 
 const Menu = () => {
     return (
-        <div>
-            
-        </div>
+        <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">
+            <img src={logo} alt="logo rollingCoffe" className="img-fluid" width={200}/>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="">Inicio</Nav.Link>
+            <Nav.Link href="">Administrador</Nav.Link>
+            <Nav.Link href="">Registro</Nav.Link>
+            <Nav.Link href="">Login</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     );
 };
 
