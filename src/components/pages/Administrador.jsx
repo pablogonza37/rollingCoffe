@@ -6,7 +6,7 @@ import { leerProductosAPI } from "../../helpers/queries";
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
 
-  useEffect(async () => {
+  useEffect( () => {
     consultarAPI();
   }, []);
 
@@ -41,7 +41,7 @@ const Administrador = () => {
         </thead>
         <tbody>
           {
-          productos.map((productos)=> <ItemProducto key={productos.id} producto={producto}></ItemProducto>)
+          productos.map((productos)=> <ItemProducto key={productos.id} producto={productos}></ItemProducto>)
 }
           
         </tbody>
