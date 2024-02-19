@@ -1,20 +1,29 @@
 import { Container, Table, Button } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { leerProductosAPI } from "../../helpers/queries";
 
 const Administrador = () => {
-const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
 
-useEffect(()=>{
-leerProductosAPI
-}, [])
+  useEffect(async () => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await leerProductosAPI();
+      setProductos(respuesta);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Container>
-       <div className="d-flex justify-content-between align-items-center mt-5">
+      <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Productos disponibles</h1>
-        <Button className="btn btn-primary" >
+        <Button className="btn btn-primary">
           <i className="bi bi-file-earmark-plus"></i>
         </Button>
       </div>
@@ -31,10 +40,10 @@ leerProductosAPI
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
+          {
+          productos.map((productos)=> <ItemProducto key={productos.id} producto={producto}></ItemProducto>)
+}
+          
         </tbody>
       </Table>
     </Container>
