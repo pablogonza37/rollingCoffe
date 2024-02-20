@@ -7,11 +7,12 @@ import producto4 from "../../assets/te_verde.png";
 
 const Inicio = () => {
   return (
-    <section>
+    <section className="mainSection">
       <img src={banner} alt="" className="w-100 img-fluid" />
       
       <Container>
       <h1 className="mt-5 display-2">Nuestros productos</h1>
+      <hr />
       <Row className="d-flex justify-content-center mt-4">
         <Col md={4} className="mb-2" >
           <Card >

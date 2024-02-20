@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 
 const Error404 = () => {
     return (
-        <section>
+        <section className="mainSection text-center">
         <div className='text-center'>
-           <img src={error404} alt="imagen error 404" className='w-50'/> 
+           <img src={error404} alt="imagen error 404" className='w-25'/> 
         </div>
         <div className='d-flex justify-content-center mb-5'>
         <Button variant="primary">Volver al inicio</Button>
