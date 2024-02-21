@@ -47,13 +47,18 @@ const FormularioProducto = () => {
             placeholder="Ej: 50"
             {...register("precio", {
               required: "El precio del producto es obligatorio",
-              pattern: { 
-                value: /^\d+(\.\d{1,2})?$/, 
-                message: 'El precio debe ser un número con hasta dos decimales'
+              min: {
+                value: 50,
+                message: "El precio como minimo debe ser de $50",
               },
-              validate: {
-                positiveNumber: value => parseFloat(value) > 0 || 'El precio debe ser mayor que 0'
-              }
+              max: {
+                value: 10000,
+                message: "El precio como maximo debe ser de $10000",
+              },
+              pattern: {
+                value: /^\d+(\.\d{1,2})?$/,
+                message: "El precio debe ser un número con hasta dos decimales",
+              },
             })}
           />
           <Form.Text className="text-danger">
@@ -66,9 +71,9 @@ const FormularioProducto = () => {
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
             {...register("imagen", {
-              required: "La URL de la imagen es requerida",
+              required: "La URL de la imagen es obligatoria",
               pattern: {
-                value: /^(ftp|http|https):\/\/[^ "]+$/i,
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
                 message: "URL inválida",
               },
             })}
@@ -87,8 +92,8 @@ const FormularioProducto = () => {
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
@@ -107,9 +112,9 @@ const FormularioProducto = () => {
                 message: "La descripcion breve dbe tener al menos 5 caracteres",
               },
               maxLength: {
-                value: 100,
+                value: 50,
                 message:
-                  "La descripción breve no puede exceder los 100 caracteres",
+                  "La descripción breve no puede exceder los 50 caracteres",
               },
             })}
           />
@@ -130,9 +135,16 @@ const FormularioProducto = () => {
                 message:
                   "La descripción amplia debe tener al menos 50 caracteres",
               },
+              maxLength: {
+                value: 500,
+                message:
+                  "La descripción amplia debe tener como maximo 500 caracteres",
+              },
             })}
           />
-          <Form.Text className="text-danger">{errors.descripcionAmplia?.message}</Form.Text>
+          <Form.Text className="text-danger">
+            {errors.descripcionAmplia?.message}
+          </Form.Text>
         </Form.Group>
 
         <Button type="submit" variant="success">
