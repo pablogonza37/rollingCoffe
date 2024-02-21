@@ -7,7 +7,23 @@ export const leerProductosAPI = async () => {
     const respuesta = await fetch(URL_Productos);
     const listaProductos = await respuesta.json();
     console.log(listaProductos);
-    return listaProductos
+    return listaProductos;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const crearProductoAPI = async (productoNuevo) => {
+  try {
+    const respuesta = await fetch(URL_Productos, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productoNuevo),
+    });
+    console.log(respuesta);
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
