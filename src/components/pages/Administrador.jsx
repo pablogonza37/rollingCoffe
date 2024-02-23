@@ -24,7 +24,7 @@ const Administrador = () => {
     <Container className="mainSection text-center">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Productos disponibles</h1>
-        <Link className="btn btn-primary" to='/administrador/crear'>
+        <Link className="btn btn-primary" to="/administrador/crear">
           <i className="bi bi-file-earmark-plus"></i>
         </Link>
       </div>
@@ -45,6 +45,7 @@ const Administrador = () => {
             <ItemProducto
               key={productos.id}
               producto={productos}
+              setProductos={setProductos}
             ></ItemProducto>
           ))}
         </tbody>

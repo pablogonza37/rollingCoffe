@@ -1,3 +1,31 @@
 {
-  "productos": []
+  "productos": [
+    {
+      "id": "3302",
+      "nombreProducto": "te",
+      "precio": "566",
+      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
+      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
+    },
+    {
+      "id": "0ad8",
+      "nombreProducto": "te",
+      "precio": "566",
+      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
+      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
+    },
+    {
+      "id": "46fb",
+      "nombreProducto": "te",
+      "precio": "566",
+      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
+      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
+    }
+  ]
 }
