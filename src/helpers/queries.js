@@ -29,13 +29,14 @@ export const crearProductoAPI = async (productoNuevo) => {
   }
 };
 
-export const borrarProductoAPI = async(id)=>{
-  try{
-    const respuesta = await fetch(`${URL_Productos}/${id}`,{
-      method: "DELETE" });
+export const borrarProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+      method: "DELETE",
+    });
     console.log(respuesta);
     return respuesta;
-  }catch(error){
-    console.log(error)
+  } catch (error) {
+    console.log(error);
   }
-}
+};
