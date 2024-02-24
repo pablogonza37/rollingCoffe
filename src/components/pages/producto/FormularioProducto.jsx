@@ -8,6 +8,7 @@ const FormularioProducto = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const productoValidado = async (producto) => {
