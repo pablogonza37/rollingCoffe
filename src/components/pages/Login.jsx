@@ -1,0 +1,76 @@
+import { Button, Card, Form, Col, Container } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+
+const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const usuarioValidado = () => {
+    console.log("usuario validado");
+    Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Sesion iniciada",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      
+  };
+
+  return (
+    <Container className="mainSection my-5">
+      <Card>
+        <Card.Header className="h4">Login</Card.Header>
+        <Card.Body>
+          <Form onSubmit={handleSubmit(usuarioValidado)}>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="name@example.com"
+                {...register("email", {
+                  required: "Email es requerido",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Email inválido",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Col>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  {...register("password", {
+                    required: "Contraseña es requerida",
+                    minLength: {
+                      value: 6,
+                      message: "La contraseña debe tener al menos 6 caracteres",
+                    },
+                  })}
+                />
+                <Form.Text className="text-danger">
+                  {errors.password?.message}
+                </Form.Text>
+              </Col>
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Ingresar
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
+};
+
+export default Login;
