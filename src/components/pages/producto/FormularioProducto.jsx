@@ -1,45 +1,66 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
+import {
+  crearProductoAPI,
+  editarProductoAPI,
+  obtenerProductoAPI,
+} from "../../../helpers/queries";
 import Swal from "sweetalert2";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-
 
 const FormularioProducto = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
+    setValue,
   } = useForm();
 
-  const {id} = useParams();
-  console.log(id);
+  const { id } = useParams();
+  const navegacion = useNavigate();
 
-  useEffect(()=>{
-if(editar){
-  cargarDatosProducto();
-}
-  },[])
-
-  const cargarDatosProducto = async()=>{
-    try{
-      const respuesta = await obtenerProductoAPI(id);
-      if(respuesta.status === 200){
-        const productoEncontrado = await respuesta.json();
-        console.log(productoEncontrado)
-      }
-    }catch (error){
-      console.log(error)
+  useEffect(() => {
+    if (editar) {
+      cargarDatosProducto();
     }
-    
-  }
+  }, []);
+
+  const cargarDatosProducto = async () => {
+    try {
+      const respuesta = await obtenerProductoAPI(id);
+      if (respuesta.status === 200) {
+        const productoEncontrado = await respuesta.json();
+        setValue("nombreProducto", productoEncontrado.nombreProducto);
+        setValue("precio", productoEncontrado.precio);
+        setValue("imagen", productoEncontrado.imagen);
+        setValue("categoria", productoEncontrado.categoria);
+        setValue("descripcionBreve", productoEncontrado.descripcionBreve);
+        setValue("descripcionAmplia", productoEncontrado.descripcionAmplia);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const productoValidado = async (producto) => {
-    console.log(producto);
     if (editar) {
-
-      console.log('aqui tengo que editar');
+      const respuesta = await editarProductoAPI(producto, id);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Producto modificado!",
+          text: `El producto "${producto.nombreProducto}" fue modificado correctamente`,
+          icon: "success",
+        });
+        navegacion("/administrador");
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error!",
+          text: `El producto "${producto.nombreProducto}" no pudo ser modificado. Intente esta opercion en unos minutos`,
+          icon: "error",
+        });
+      }
     } else {
       const respuesta = await crearProductoAPI(producto);
       if (respuesta.status === 201) {
@@ -53,7 +74,7 @@ if(editar){
         Swal.fire({
           title: "Ocurrio un error!",
           text: `El producto "${producto.nombreProducto}" no pudo ser creado. Intente esta opercion en unos minutos`,
-          icon: "success",
+          icon: "error",
         });
       }
     }

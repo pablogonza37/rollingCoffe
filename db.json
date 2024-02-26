@@ -1,31 +1,22 @@
 {
   "productos": [
     {
-      "id": "3302",
-      "nombreProducto": "te",
-      "precio": "566",
-      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
+      "nombreProducto": "capuchino",
+      "precio": "1500",
+      "imagen": "https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg",
       "categoria": "Infusiones",
-      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
-      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
+      "descripcionBreve": "un esquicito capuchino riki riki\n",
+      "descripcionAmplia": "simon valentin galvan y johntanan bestis for ever ",
+      "id": "d758"
     },
     {
-      "id": "0ad8",
       "nombreProducto": "te",
-      "precio": "566",
+      "precio": "1000",
       "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
       "categoria": "Infusiones",
-      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
-      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
-    },
-    {
-      "id": "46fb",
-      "nombreProducto": "te",
-      "precio": "566",
-      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
-      "categoria": "Infusiones",
-      "descripcionBreve": "dsfdsfdsfdfsdfssdffsdsdfsdfdsf",
-      "descripcionAmplia": "fdssfdsdfsdffdssdsdfsdfsdfsdsdsfdfssfdfsdsdfdfsdsfdsf"
+      "descripcionBreve": "dsfdsfsdfgsbdyifgbsdihfiusdhgfuds",
+      "descripcionAmplia": "dsfsdfjiosdnfsodnfjnsdjkfnjkdsnfjkndskjfnjkdsnfjksdnjkfndsjknfjkdsnfkjndsjkfnjkdsnfjknskdjfnjksdf",
+      "id": "618c"
     }
   ]
 }
