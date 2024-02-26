@@ -8,7 +8,9 @@ import Administrador from "./components/pages/Administrador";
 import Error404 from "./components/pages/Error404";
 import FormularioProducto from "./components/pages/producto/FormularioProducto";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './components/pages/Login';
+import Login from "./components/pages/producto/Login";
+import DetalleProducto from "./components/pages/DetalleProducto";
+
 
 function App() {
   return (

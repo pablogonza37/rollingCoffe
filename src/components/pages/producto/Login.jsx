@@ -1,6 +1,7 @@
 import { Button, Card, Form, Col, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { login } from "../../../helpers/queries";
 
 const Login = () => {
   const {
@@ -9,32 +10,20 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-const onSubmit = (usuario)=>{
-  if(login(usuario)){
-    Swal.fire({
-      title: "Usuario logueado",
-      text: `Bienvenido "${usuario.mail}"`,
-      icon: "success",
-    });
-  }else{
-    Swal.fire({
-      title: "Ocurrio un error",
-      text: "El ususario o password son incorrectos",
-      icon: "error",
-    });
-  }
-}
-
-  const usuarioValidado = () => {
-    console.log("usuario validado");
-    Swal.fire({
-        position: "center",
+  const onSubmit = (usuario) => {
+    if (login(usuario)) {
+      Swal.fire({
+        title: "Usuario logueado",
+        text: `Bienvenido "${usuario.mail}"`,
         icon: "success",
-        title: "Sesion iniciada",
-        showConfirmButton: false,
-        timer: 1500
       });
-      
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: "El ususario o password son incorrectos",
+        icon: "error",
+      });
+    }
   };
 
   return (
@@ -42,13 +31,13 @@ const onSubmit = (usuario)=>{
       <Card>
         <Card.Header className="h4">Login</Card.Header>
         <Card.Body>
-          <Form onSubmit={handleSubmit(usuarioValidado)}>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                {...register("email", {
+                {...register("mail", {
                   required: "Email es requerido",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
