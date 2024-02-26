@@ -1,7 +1,10 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../../../helpers/queries";
+import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 
 const FormularioProducto = ({ editar, titulo }) => {
   const {
@@ -9,6 +12,28 @@ const FormularioProducto = ({ editar, titulo }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const {id} = useParams();
+  console.log(id);
+
+  useEffect(()=>{
+if(editar){
+  cargarDatosProducto();
+}
+  },[])
+
+  const cargarDatosProducto = async()=>{
+    try{
+      const respuesta = await obtenerProductoAPI(id);
+      if(respuesta.status === 200){
+        const productoEncontrado = await respuesta.json();
+        console.log(productoEncontrado)
+      }
+    }catch (error){
+      console.log(error)
+    }
+    
+  }
 
   const productoValidado = async (producto) => {
     console.log(producto);
