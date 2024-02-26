@@ -9,6 +9,22 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+const onSubmit = (usuario)=>{
+  if(login(usuario)){
+    Swal.fire({
+      title: "Usuario logueado",
+      text: `Bienvenido "${usuario.mail}"`,
+      icon: "success",
+    });
+  }else{
+    Swal.fire({
+      title: "Ocurrio un error",
+      text: "El ususario o password son incorrectos",
+      icon: "error",
+    });
+  }
+}
+
   const usuarioValidado = () => {
     console.log("usuario validado");
     Swal.fire({

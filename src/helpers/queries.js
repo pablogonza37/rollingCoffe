@@ -29,13 +29,59 @@ export const crearProductoAPI = async (productoNuevo) => {
   }
 };
 
-export const borrarProductoAPI = async(id)=>{
-  try{
-    const respuesta = await fetch(`${URL_Productos}/${id}`,{
-      method: "DELETE" });
+export const borrarProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+      method: "DELETE",
+    });
     console.log(respuesta);
     return respuesta;
-  }catch(error){
-    console.log(error)
+  } catch (error) {
+    console.log(error);
   }
-}
+};
+
+export const obtenerProductoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(URL_Productos + "/" + id);
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editarProductoAPI = async (productoModificado, id) => {
+  try {
+    const respuesta = await fetch(`${URL_Productos}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(productoModificado),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const userAdmin = {
+  mail: "admin@rollingcoffee.com",
+  password: "123Aa$123",
+};
+
+export const login = (usuario) => {
+  if (
+    usuario.mail === userAdmin.mail &&
+    usuario.password === userAdmin.password
+  ) {
+    sessionStorage.setItem(
+      "usuarioRollingCoffee",
+      JSON.stringify(usuario.mail)
+    );
+    return true;
+  }else {
+    return false;
+  }
+};
