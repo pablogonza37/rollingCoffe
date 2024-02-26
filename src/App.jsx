@@ -22,10 +22,10 @@ function App() {
           element={<Administrador></Administrador>}
         ></Route>
         <Route exact path="/administrador/crear"
-          element={<FormularioProducto editar={false}></FormularioProducto>}
+          element={<FormularioProducto editar={false} titulo='Nuevo producto'></FormularioProducto>}
         ></Route>
         <Route exact path="/administrador/editar/:id"
-          element={<FormularioProducto editar={true}></FormularioProducto>}
+          element={<FormularioProducto editar={true} titulo='EditarProducto'></FormularioProducto>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
