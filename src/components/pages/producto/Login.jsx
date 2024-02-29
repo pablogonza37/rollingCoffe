@@ -2,6 +2,7 @@ import { Button, Card, Form, Col, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { login } from "../../../helpers/queries";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({setUsuarioLogueado}) => {
   const {
