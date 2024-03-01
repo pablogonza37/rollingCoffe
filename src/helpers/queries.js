@@ -1,12 +1,10 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTO;
 
-console.log(URL_Productos);
 
 export const leerProductosAPI = async () => {
   try {
     const respuesta = await fetch(URL_Productos);
     const listaProductos = await respuesta.json();
-    console.log(listaProductos);
     return listaProductos;
   } catch (error) {
     console.log(error);
@@ -22,7 +20,6 @@ export const crearProductoAPI = async (productoNuevo) => {
       },
       body: JSON.stringify(productoNuevo),
     });
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -44,7 +41,6 @@ export const borrarProductoAPI = async (id) => {
 export const obtenerProductoAPI = async (id) => {
   try {
     const respuesta = await fetch(URL_Productos + "/" + id);
-    console.log(respuesta);
     return respuesta;
   } catch (error) {
     console.log(error);
@@ -68,7 +64,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 
 const userAdmin = {
   mail: "admin@rollingcoffee.com",
-  password: "123123",
+  password: "123Aa123",
 };
 
 export const login = (usuario) => {
@@ -81,7 +77,7 @@ export const login = (usuario) => {
       JSON.stringify(usuario.mail)
     );
     return true;
-  }else {
+  } else {
     return false;
   }
 };
