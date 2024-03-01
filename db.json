@@ -5,18 +5,126 @@
       "precio": "1500",
       "imagen": "https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg",
       "categoria": "Infusiones",
-      "descripcionBreve": "un esquicito capuchino riki",
-      "descripcionAmplia": "simon valentin galvan y johntanan bestis for ever ",
+      "descripcionBreve": "Café espresso con una capa de espuma de leche.",
+      "descripcionAmplia": "El cappuccino es una mezcla equilibrada de espresso, leche vaporizada y espuma de leche, presentando una combinación armoniosa de sabores y texturas. Con una capa de espuma cremosa en la parte superior y un toque de cocoa en polvo, el cappuccino es una opción popular para aquellos que buscan una experiencia de café indulgente con un ligero toque de dulzura.",
       "id": "d758"
     },
     {
-      "id": "618c",
-      "nombreProducto": "te",
-      "precio": "4444",
-      "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
+      "id": "e29c",
+      "nombreProducto": "Espresso",
+      "precio": "1300",
+      "imagen": "https://images.pexels.com/photos/685527/pexels-photo-685527.jpeg",
       "categoria": "Infusiones",
-      "descripcionBreve": "dsfdsfsdfgsbdyifgbsdihfiusdhgfuds",
-      "descripcionAmplia": "dsfsdfjiosdnfsodnfjnsdjkfnjkdsnfjkndskjfnjkdsnfjksdnjkfndsjknfjkdsnfkjndsjkfnjkdsnfjknskdjfnjksdf"
+      "descripcionBreve": "Un shot de café intenso y concentrado.",
+      "descripcionAmplia": " Un shot de café espresso es una pequeña porción de café altamente concentrado y fuerte, elaborado al forzar agua caliente a través de granos de café finamente molidos. Su sabor es intenso y rico, con un cuerpo robusto y un toque de amargura que lo hace popular entre los amantes del café fuerte."
+    },
+    {
+      "id": "2f2b",
+      "nombreProducto": "Café Americano",
+      "precio": "1000",
+      "imagen": "https://images.pexels.com/photos/6207305/pexels-photo-6207305.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Café espresso diluido con agua caliente.",
+      "descripcionAmplia": "El café americano es una bebida suave y ligera, que se prepara agregando agua caliente al espresso para diluir su fuerza. Aunque más suave que el espresso, conserva el carácter distintivo del café, ofreciendo una experiencia de sabor más suave y equilibrada."
+    },
+    {
+      "id": "df3a",
+      "nombreProducto": "Té Negro",
+      "precio": "800",
+      "imagen": "https://images.pexels.com/photos/13032225/pexels-photo-13032225.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Té negro caliente, robusto y con cafeína.",
+      "descripcionAmplia": "El té negro es una infusión caliente con un sabor robusto y profundo, derivado de las hojas secas de la planta Camellia sinensis. Con un color oscuro y un aroma distintivo, el té negro es conocido por su contenido de cafeína y sus propiedades estimulantes, ofreciendo una experiencia de té vigorizante y satisfactoria."
+    },
+    {
+      "id": "02bc",
+      "nombreProducto": "Té Verde",
+      "precio": "900",
+      "imagen": "https://images.pexels.com/photos/3123792/pexels-photo-3123792.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Té verde caliente, con propiedades antioxidantes.",
+      "descripcionAmplia": " El té verde es una bebida refrescante y revitalizante, elaborada a partir de hojas frescas de la planta Camellia sinensis. Con un sabor fresco y herbáceo, el té verde es conocido por sus propiedades antioxidantes y su capacidad para mejorar la concentración y el bienestar general."
+    },
+    {
+      "id": "9e54",
+      "nombreProducto": "Té de Hierbas",
+      "precio": "1000",
+      "imagen": "https://images.pexels.com/photos/2461314/pexels-photo-2461314.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": " Infusión caliente de hierbas naturales.",
+      "descripcionAmplia": "El té de hierbas es una infusión caliente elaborada con una variedad de plantas, hierbas y especias, sin contener hojas de té Camellia sinensis. Con una amplia gama de sabores y beneficios para la salud, el té de hierbas ofrece una experiencia relajante y reconfortante, perfecta para calmar los nervios y promover la tranquilidad."
+    },
+    {
+      "id": "ea9b",
+      "nombreProducto": "Frappé de Café",
+      "precio": "1500",
+      "imagen": "https://images.pexels.com/photos/15757569/pexels-photo-15757569/free-photo-of-cuchara-de-cafe-cobra.jpeg",
+      "categoria": "Batidos",
+      "descripcionBreve": "Café espresso mezclado con hielo, leche y jarabe.",
+      "descripcionAmplia": " El frappé de café es una bebida refrescante y energizante, preparada con café espresso, hielo triturado, leche y jarabe, mezclado hasta lograr una consistencia suave y cremosa. Decorado con crema batida en la parte superior, el frappé de café es una opción popular para aquellos que desean disfrutar del sabor del café de una manera fresca y deliciosa."
+    },
+    {
+      "id": "5c79",
+      "nombreProducto": "Frappe de Moka",
+      "precio": "1000",
+      "imagen": "https://images.pexels.com/photos/5749084/pexels-photo-5749084.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Similar al  de café, pero salsa de chocolate.",
+      "descripcionAmplia": "Similar al frappé de café, el frappé de moka agrega una deliciosa mezcla de chocolate al café espresso, creando una bebida indulgente y satisfactoria que combina el sabor del café con el dulzor del chocolate, ideal para satisfacer los antojos de café y chocolate en cualquier momento del día."
+    },
+    {
+      "id": "9445",
+      "nombreProducto": "Smoothies de Frutas",
+      "precio": "2000",
+      "imagen": "https://images.pexels.com/photos/775030/pexels-photo-775030.jpeg",
+      "categoria": "Batidos",
+      "descripcionBreve": "Mezcla de frutas frescas, yogur y hielo.",
+      "descripcionAmplia": "Los smoothies de frutas son bebidas cremosas y nutritivas elaboradas con una mezcla de frutas frescas, yogur, hielo y edulcorante, ofreciendo una explosión de sabor y una dosis de nutrientes en cada sorbo. Con una variedad de combinaciones disponibles, desde fresas y plátanos hasta mango y piña, los smoothies de frutas son una opción deliciosa y saludable para disfrutar en cualquier momento del día."
+    },
+    {
+      "id": "07e9",
+      "nombreProducto": "Croissant",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/1510685/pexels-photo-1510685.jpeg",
+      "categoria": "Dulce",
+      "descripcionBreve": "Hojaldre de mantequilla.",
+      "descripcionAmplia": "El croissant es una deliciosa pieza de hojaldre de mantequilla, famosa por su textura ligera y hojaldrada. Con una forma característica de media luna, el croissant es un acompañamiento perfecto para el café o el té, ofreciendo un equilibrio entre capas crujientes y un interior suave y esponjoso."
+    },
+    {
+      "id": "4534",
+      "nombreProducto": "Muffins",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/131899/pexels-photo-131899.jpeg",
+      "categoria": "Dulce",
+      "descripcionBreve": "Opciones disponibles de arándanos hasta chocolate.",
+      "descripcionAmplia": " Los muffins son pequeños pasteles individuales, suaves y esponjosos, disponibles en una variedad de sabores que van desde arándanos y chocolate hasta plátano y nueces. Con una textura húmeda y una mezcla equilibrada de ingredientes, los muffins son una opción versátil y deliciosa para disfrutar como desayuno, merienda o postre."
+    },
+    {
+      "id": "ef26",
+      "nombreProducto": "Brownies",
+      "precio": "900",
+      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
+      "categoria": "Dulce",
+      "descripcionBreve": " Pastel denso y chocolatoso.",
+      "descripcionAmplia": "Los brownies son pasteles densos y chocolatosos, elaborados con una mezcla rica de chocolate, mantequilla, azúcar y huevos. Con una textura húmeda y un sabor intenso a chocolate, los brownies son una indulgencia decadente para los amantes del chocolate, perfectos para disfrutar solos o acompañados de una taza de café o té caliente."
+    },
+    {
+      "id": "7838",
+      "nombreProducto": "Galletas",
+      "precio": "500",
+      "imagen": "https://images.pexels.com/photos/834688/pexels-photo-834688.jpeg",
+      "categoria": "Dulce",
+      "descripcionBreve": "Variedad de galletas.",
+      "descripcionAmplia": "Las galletas son pequeñas golosinas horneadas, disponibles en una variedad de sabores y texturas, desde clásicas de chocolate hasta avena y pasas. Con una combinación perfecta de crujiente por fuera y suavidad por dentro, las galletas son el complemento ideal para cualquier bebida caliente o fría, ofreciendo un toque dulce y reconfortante en cada bocado."
+    },
+    {
+      "id": "5f55",
+      "nombreProducto": "Sandwiches",
+      "precio": "2000",
+      "imagen": "https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg",
+      "categoria": "Salado",
+      "descripcionBreve": "Desde jamón y queso hasta vegetarianos",
+      "descripcionAmplia": "Los sandwiches son opciones de comida rápida y conveniente, disponibles en una variedad de rellenos que van desde jamón y queso hasta opciones vegetarianas con verduras frescas y hummus. Con pan fresco y ingredientes de alta calidad, los sandwiches son una opción versátil y satisfactoria para aquellos que desean una comida ligera y deliciosa en cualquier momento del día."
     }
   ]
 }
