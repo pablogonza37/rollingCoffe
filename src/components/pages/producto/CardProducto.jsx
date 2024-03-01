@@ -16,7 +16,7 @@ const CardProducto = ({productosInicio}) => {
           <Card.Text>
             {productosInicio.descripcionBreve}{" "}
             <br className="mb-2" />
-            <span className="fw-bold">{productosInicio.precio}</span>
+            <span className="fw-bold">${productosInicio.precio}</span>
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">

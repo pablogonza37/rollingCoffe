@@ -5,18 +5,18 @@
       "precio": "1500",
       "imagen": "https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg",
       "categoria": "Infusiones",
-      "descripcionBreve": "un esquicito capuchino riki riki\n",
+      "descripcionBreve": "un esquicito capuchino riki",
       "descripcionAmplia": "simon valentin galvan y johntanan bestis for ever ",
       "id": "d758"
     },
     {
+      "id": "618c",
       "nombreProducto": "te",
-      "precio": "1000",
+      "precio": "4444",
       "imagen": "https://images.pexels.com/photos/15440309/pexels-photo-15440309/free-photo-of-beber-vaso-mesa-te.jpeg",
       "categoria": "Infusiones",
       "descripcionBreve": "dsfdsfsdfgsbdyifgbsdihfiusdhgfuds",
-      "descripcionAmplia": "dsfsdfjiosdnfsodnfjnsdjkfnjkdsnfjkndskjfnjkdsnfjksdnjkfndsjknfjkdsnfkjndsjkfnjkdsnfjknskdjfnjksdf",
-      "id": "618c"
+      "descripcionAmplia": "dsfsdfjiosdnfsodnfjnsdjkfnjkdsnfjkndskjfnjkdsnfjksdnjkfndsjknfjkdsnfkjndsjkfnjkdsnfjknskdjfnjksdf"
     }
   ]
 }

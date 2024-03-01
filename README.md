@@ -1,8 +1,36 @@
-# React + Vite
+# Pagina de Cafetería (CRUD)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación es un sistema CRUD (Crear, Leer, Actualizar, Borrar) construido con React para gestionar los productos de una cafetería. Utiliza React Hook Form para manejar los formularios, React Router DOM para la navegación y JSON Server para simular una API RESTful para el almacenamiento de datos.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Crear Producto: Los administradores pueden agregar nuevos productos a la lista.
+- Leer Producto: Los usuarios pueden ver la lista de productos disponibles.
+- Actualizar Producto: Los administradores pueden editar la información de los productos existentes.
+- Borrar Producto: Los administradores pueden eliminar productos de la lista.
+
+
+## Tecnologías Utilizadas
+
+- React: Biblioteca de JavaScript para construir interfaces de usuario.
+- React Hook Form: Biblioteca para manejar formularios en React de manera sencilla.
+- React Router DOM: Enrutador para navegación declarativa en aplicaciones React.
+- JSON Server: Biblioteca para crear una API RESTful a partir de un archivo JSON.
+
+
+## Instalación
+
+- Clona este repositorio: git clone https://github.com/pablogonza37/blogRecetasCocina.git
+- Navega al directorio del proyecto: cd blogRecetasCocina
+- Instala las dependencias: npm install
+- Configuración del Servidor JSON
+- Inicia el servidor JSON
+
+
+## Uso
+
+- Inicia la aplicación: npm start
+- Abre tu navegador y visita http://localhost:3000
+
+Contribuir
+¡Siéntete libre de contribuir al proyecto! Puedes abrir un issue o enviar un pull request.
