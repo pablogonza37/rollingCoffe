@@ -4,10 +4,13 @@ const URL_Productos = import.meta.env.VITE_API_PRODUCTO;
 export const leerProductosAPI = async () => {
   try {
     const respuesta = await fetch(URL_Productos);
+    if (!respuesta.ok) {
+      throw new Error('No se pudo cargar la lista de recetas');
+    }
     const listaProductos = await respuesta.json();
     return listaProductos;
   } catch (error) {
-    console.log(error);
+    throw new Error('Error al cargar las productos desde la API: ' + error.message);
   }
 };
 
