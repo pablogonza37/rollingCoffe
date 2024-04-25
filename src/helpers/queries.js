@@ -67,7 +67,7 @@ export const editarProductoAPI = async (productoModificado, id) => {
 
 const userAdmin = {
   mail: "admin@rollingcoffee.com",
-  password: "123Aa123",
+  password: "prueba123",
 };
 
 export const login = (usuario) => {

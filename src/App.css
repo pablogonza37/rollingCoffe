@@ -46,3 +46,20 @@
     height: 200px;
     object-fit: cover;
 }
+
+.btnSesion:hover{
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.linkMenu{
+  margin-right: 10px;
+}
+
+.linkMenu:hover{
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.205); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
