@@ -52,7 +52,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               </NavLink>
               <NavLink
                 end
-                className="nav-link ps-2 text-white text-center bg-dark border border-black-1 rounded btnSesion"
+                className="nav-link ps-2 text-white text-center bg-dark btnSesion"
                 to="/login"
               >
                 Iniciar sesión
@@ -61,7 +61,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           )}
           <Nav>
             {usuarioLogueado !== "" && (
-              <Button className="nav-link text-white bg-dark border border-black-1 rounded btnSesion" variant="link" onClick={logout}>
+              <Button className="nav-link text-white  bg-dark btnSesion rounded-0" onClick={logout}>
                 Cerrar sesión
               </Button>
             )}
