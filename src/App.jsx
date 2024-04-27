@@ -13,6 +13,7 @@ import DetalleProducto from "./components/pages/DetalleProducto";
 import { useState } from "react";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import Registro from "./components/pages/usuario/Registro";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioRollingCoffee"));
@@ -37,6 +38,7 @@ function App() {
             </RutasProtegidas>}
           ></Route>
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+          <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
