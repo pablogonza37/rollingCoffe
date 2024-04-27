@@ -64,4 +64,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.205); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.text-decoration-underline{
+  cursor: pointer;
+}
