@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { login } from "../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({setUsuarioLogueado}) => {
+const Login = ({ setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -19,7 +19,7 @@ const Login = ({setUsuarioLogueado}) => {
         text: `Bienvenido "${usuario.mail}"`,
         icon: "success",
       });
-      navegacion('/administrador');
+      navegacion("/administrador");
       setUsuarioLogueado(usuario.mail);
     } else {
       Swal.fire({
@@ -31,10 +31,16 @@ const Login = ({setUsuarioLogueado}) => {
   };
 
   return (
-    <Container className="mainSection my-5">
-      <Card>
-        <Card.Header className="h4">Login</Card.Header>
+    <Container className="mainSection my-5 d-flex justify-content-center">
+      <img
+        src="https://images.pexels.com/photos/11739318/pexels-photo-11739318.jpeg"
+        alt=""
+        style={{ width: "25rem", height: "auto" }}
+        className="img-fluid d-none d-lg-block shadow"
+      />
+      <Card style={{ width: "25rem" }} className="shadow rounded-0 border-0">
         <Card.Body>
+          <h4 className="display-6 mb-4">Iniciar sesión</h4>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
@@ -50,15 +56,15 @@ const Login = ({setUsuarioLogueado}) => {
                 })}
               />
               <Form.Text className="text-danger">
-                {errors.email?.message}
+                {errors.mail?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Contraseña</Form.Label>
               <Col>
                 <Form.Control
                   type="password"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                   {...register("password", {
                     required: "Contraseña es requerida",
                     minLength: {
@@ -72,9 +78,11 @@ const Login = ({setUsuarioLogueado}) => {
                 </Form.Text>
               </Col>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <div className="d-flex justify-content-center mt-4">
+            <Button variant="success" type="submit" className="w-100">
               Ingresar
             </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>

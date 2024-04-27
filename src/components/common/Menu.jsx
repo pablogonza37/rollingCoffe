@@ -14,7 +14,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#" className="me-auto">
+        <Navbar.Brand href="#" className="me-auto" as={Link} to="/">
           <img
             src={logo}
             alt="logo rollingCoffe"
@@ -52,7 +52,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               </NavLink>
               <NavLink
                 end
-                className="nav-link ps-2 text-white text-center bg-dark btnSesion"
+                className="nav-link ps-2 text-white text-center bg-dark btnSesion rounded"
                 to="/login"
               >
                 Iniciar sesión
@@ -61,7 +61,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           )}
           <Nav>
             {usuarioLogueado !== "" && (
-              <Button className="nav-link text-white  bg-dark btnSesion rounded-0" onClick={logout}>
+              <Button className="nav-link text-white  bg-dark btnSesion rounded" onClick={logout}>
                 Cerrar sesión
               </Button>
             )}
