@@ -31,8 +31,8 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             <NavLink end className="nav-link linkMenu ps-2" to="/contacto">
               Contacto
             </NavLink>
-            <NavLink end className="nav-link linkMenu ps-2" to="/quienesSomos">
-              Quienes somos?
+            <NavLink end className="nav-link linkMenu ps-2" to="/nosotros">
+            ¿Quienes somos?
             </NavLink>
             {usuarioLogueado !== "" && (
               <NavDropdown title="Administrador" className="linkMenu ps-2" id="collapsible-nav-dropdown">

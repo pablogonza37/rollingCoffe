@@ -67,3 +67,9 @@
 .text-decoration-underline{
   cursor: pointer;
 }
+
+.imgNosotros{
+  object-fit: cover;
+  height: 395px;
+  width: 100%;
+}

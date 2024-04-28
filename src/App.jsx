@@ -15,6 +15,7 @@ import RutasAdmin from "./components/routes/RutasAdmin";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import Registro from "./components/pages/usuario/Registro";
 import Contacto from "./components/pages/Contacto";
+import Nosotros from "./components/pages/Nosotros";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem("usuarioRollingCoffee"));
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
+          <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
