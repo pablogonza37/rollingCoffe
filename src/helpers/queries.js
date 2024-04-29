@@ -1,4 +1,5 @@
 const URL_Productos = import.meta.env.VITE_API_PRODUCTO;
+const URL_Usuarios = import.meta.env.VITE_API_USUARIO;
 
 
 export const leerProductosAPI = async () => {
@@ -64,6 +65,22 @@ export const editarProductoAPI = async (productoModificado, id) => {
     console.log(error);
   }
 };
+
+export const crearUsuarioAPI = async (nuevoUsuario) => {
+  try {
+    const respuesta = await fetch(URL_Usuarios, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(nuevoUsuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 const userAdmin = {
   mail: "admin@rollingcoffee.com",
