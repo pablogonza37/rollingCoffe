@@ -81,6 +81,28 @@ export const crearUsuarioAPI = async (nuevoUsuario) => {
   }
 };
 
+export const leerUsuariosAPI = async () => {
+  try {
+    const respuesta = await fetch(URL_Usuarios);
+    if (!respuesta.ok) {
+      throw new Error('No se pudo cargar la lista de usuarios');
+    }
+    const listaUsuarios = await respuesta.json();
+    return listaUsuarios;
+  } catch (error) {
+    throw new Error('Error al cargar los usuarios desde la API: ' + error.message);
+  }
+};
+
+export const obtenerUsuarioAPI = async (id) => {
+  try {
+    const respuesta = await fetch(URL_Usuarios + "/" + id);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 const userAdmin = {
   mail: "admin@rollingcoffee.com",
