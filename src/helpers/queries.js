@@ -115,6 +115,21 @@ export const borrarUsuarioAPI = async (id) => {
   }
 };
 
+export const editarUsuarioAPI = async (usuarioEditado, id) => {
+  try {
+    const respuesta = await fetch(`${URL_Usuarios}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuarioEditado),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 const userAdmin = {
   mail: "admin@rollingcoffee.com",
