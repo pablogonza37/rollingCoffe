@@ -1,7 +1,14 @@
 import { Button, Card, Form, Col, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { crearUsuarioAPI, leerUsuariosAPI } from "../../../helpers/queries";
+import { useState } from "react";
 
-const Registro = () => {
+const Registro = ( {usuarioLogueado, rol, titulo} ) => {
+  const [rolPorDefecto] = useState("admin");
+  const [rolVisible] = useState(rol);
+  const navegacion = useNavigate();
     const {
         register,
         handleSubmit,
@@ -9,6 +16,48 @@ const Registro = () => {
         watch,
         reset,
       } = useForm();
+
+      const onSubmit = async (data) => {
+        const usuario = {
+          nombreUsuario: data.nombreUsuario,
+          email: data.email,
+          rol: data.rol || rolPorDefecto,
+          password: data.password,
+          suspendido: false,
+        };
+    
+        const usuarios = await leerUsuariosAPI();
+        const usuarioExistente = usuarios.find((user) => user.email === usuario.email);
+    
+        if (usuarioExistente) {
+          Swal.fire({
+            title: "Error",
+            text: "Ya existe un usuario con este correo electrónico",
+            icon: "error",
+          });
+          return;
+        }
+        const respuesta = await crearUsuarioAPI(usuario);
+    if (respuesta.status === 201) {
+      Swal.fire({
+        title: "Usuario registrado",
+        text: `El usuario "${usuario.nombreUsuario}" fue registrado correctamente`,
+        icon: "success",
+      });
+      if (!usuarioLogueado) {
+        navegacion("/login");
+      }
+      reset();
+    } else {
+      Swal.fire({
+        title: "Ocurrió un error",
+        text: `El usuario "${usuario.nombreUsuario}" no pudo ser registrado. Intente esta operación en unos minutos`,
+        icon: "error",
+      });
+    }
+      }
+
+      const password = watch("password", "");
 
     return (
         <Container className="mainSection my-5 d-flex justify-content-center">
@@ -20,8 +69,8 @@ const Registro = () => {
       />
       <Card style={{ width: "25rem" }} className="shadow rounded-0 border-0">
         <Card.Body>
-          <h4 className="display-6 mb-4">Registro</h4>
-          <Form >
+          <h4 className="display-6 mb-4">{titulo}</h4>
+          <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3">
           <Form.Label>Nombre de usuario*</Form.Label>
           <Form.Control
@@ -64,6 +113,22 @@ const Registro = () => {
             <p style={{ color: "red" }}>{errors.email.message}</p>
           )}
         </Form.Group>
+
+        {rolVisible && (
+          <Form.Group className="mb-3" controlId="formcategoria">
+            <Form.Label>Rol*</Form.Label>
+            <Form.Select
+              {...register("rol", {
+                required: "El rol es obligatorio",
+              })}
+            >
+              <option value="usuario">Usuario</option>
+              <option value="admin">Admin</option>
+            </Form.Select>
+            <Form.Text className="text-danger">{errors.rol?.message}</Form.Text>
+          </Form.Group>
+        )}
+
         <Form.Group className="mb-3">
           <Form.Label>Contraseña*</Form.Label>
           <Form.Control

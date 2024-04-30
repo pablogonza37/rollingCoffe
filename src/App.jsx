@@ -40,7 +40,7 @@ function App() {
             </RutasProtegidas>}
           ></Route>
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
-          <Route exact path="/registro" element={<Registro></Registro>}></Route>
+          <Route exact path="/registro" element={<Registro usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} tituloRegistro='Registro' rol={false}></Registro>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>

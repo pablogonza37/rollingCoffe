@@ -126,5 +126,23 @@
       "descripcionBreve": "Desde jamón y queso hasta vegetarianos",
       "descripcionAmplia": "Los sandwiches son opciones de comida rápida y conveniente, disponibles en una variedad de rellenos que van desde jamón y queso hasta opciones vegetarianas con verduras frescas y hummus. Con pan fresco y ingredientes de alta calidad, los sandwiches son una opción versátil y satisfactoria para aquellos que desean una comida ligera y deliciosa en cualquier momento del día."
     }
+  ],
+  "usuarios": [
+    {
+      "id": "16ca",
+      "nombreUsuario": "tomas",
+      "email": "jose@gmail.com",
+      "rol": "usuario",
+      "password": "Tomas123",
+      "suspendido": false
+    },
+    {
+      "id": "e4ae",
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcoffee.com",
+      "rol": "admin",
+      "password": "Admin123",
+      "suspendido": false
+    }
   ]
 }
