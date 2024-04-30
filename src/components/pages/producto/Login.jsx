@@ -12,21 +12,26 @@ const Login = ({ setUsuarioLogueado }) => {
   } = useForm();
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario) => {
-    if (login(usuario)) {
-      Swal.fire({
-        title: "Usuario logueado",
-        text: `Bienvenido "${usuario.mail}"`,
-        icon: "success",
-      });
-      navegacion("/administrador");
-      setUsuarioLogueado(usuario.mail);
+  const onSubmit = async (usuario) => {
+    const respuesta = await login(usuario);
+    if (respuesta.status === 200) {
+      const datos = await respuesta.json();
+
+      sessionStorage.setItem(
+        "usuarioRollingCoffee",
+        JSON.stringify({ email: datos.email, token: datos.token, rol:datos.rol, suspendido:datos.suspendido })
+      );
+      setUsuarioLogueado(datos);
+      if (datos.rol === 'admin') {
+        Swal.fire("¡Bienvenido!", "Has iniciado sesión correctamente", "success");
+        navegacion("/administrador/productos");
+      } else {
+        Swal.fire("¡Bienvenido!", "Has iniciado sesión correctamente", "success");
+        navegacion("/");
+      }
+    
     } else {
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: "El ususario o password son incorrectos",
-        icon: "error",
-      });
+      Swal.fire("Ocurrió un error", "Correo o contraseña incorrectos", "error");
     }
   };
 
