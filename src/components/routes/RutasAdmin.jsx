@@ -11,9 +11,14 @@ const RutasAdmin = () => {
       <Routes>
         <Route
           exact
-          path="/"
-          element={<Administrador></Administrador>}
+          path="/productos"
+          element={<Administrador tipo="productos"></Administrador>}
         ></Route>
+        <Route
+          exact
+          path="/usuarios"
+          element={<Administrador tipo="usuarios" />}
+        />
         <Route
           exact
           path="/crear"

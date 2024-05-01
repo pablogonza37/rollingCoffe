@@ -129,14 +129,6 @@
   ],
   "usuarios": [
     {
-      "id": "16ca",
-      "nombreUsuario": "tomas",
-      "email": "jose@gmail.com",
-      "rol": "usuario",
-      "password": "Tomas123",
-      "suspendido": false
-    },
-    {
       "id": "e4ae",
       "nombreUsuario": "admin",
       "email": "admin@rollingcoffee.com",

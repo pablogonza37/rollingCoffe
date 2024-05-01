@@ -12,7 +12,7 @@ const Login = ({ setUsuarioLogueado }) => {
   } = useForm();
   const navegacion = useNavigate();
 
-  const onSubmit = async (usuario) => {
+  {/*const onSubmit = async (usuario) => {
     const respuesta = await login(usuario);
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
@@ -33,7 +33,27 @@ const Login = ({ setUsuarioLogueado }) => {
     } else {
       Swal.fire("Ocurrió un error", "Correo o contraseña incorrectos", "error");
     }
-  };
+  };*/}
+
+
+  
+    const onSubmit = (usuario) => {
+      if (login(usuario)) {
+        Swal.fire({
+          title: "Usuario logueado",
+          text: `Bienvenido "${usuario.mail}"`,
+          icon: "success",
+        });
+        navegacion('/administrador/usuarios');
+        setUsuarioLogueado(usuario.mail);
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: "El ususario o password son incorrectos",
+          icon: "error",
+        });
+      }
+    };
 
   return (
     <Container className="mainSection my-5 d-flex justify-content-center">
