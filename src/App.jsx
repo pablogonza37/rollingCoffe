@@ -18,7 +18,7 @@ import Contacto from "./components/pages/Contacto";
 import Nosotros from "./components/pages/Nosotros";
 
 function App() {
-  const usuario = JSON.parse(sessionStorage.getItem("usuarioRollingCoffee"));
+  const usuario = JSON.parse(sessionStorage.getItem("usuarioRollingCoffee")) || "";
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (

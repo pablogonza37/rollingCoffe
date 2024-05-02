@@ -131,7 +131,6 @@ export const editarUsuarioAPI = async (usuarioEditado, id) => {
   }
 };
 
-/*
 export const login = async (usuario) =>{
   try {
     const respuesta = await fetch(URL_Login, {
@@ -146,24 +145,5 @@ export const login = async (usuario) =>{
     console.log("errores en el login");
     return;
   }
-}*/
+}
 
-const userAdmin = {
-  mail: "admin@rollingcoffee.com",
-  password: "prueba123",
-};
-
-export const login = (usuario) => {
-  if (
-    usuario.mail === userAdmin.mail &&
-    usuario.password === userAdmin.password
-  ) {
-    sessionStorage.setItem(
-      "usuarioRollingCoffee",
-      JSON.stringify(usuario.mail)
-    );
-    return true;
-  }else {
-    return false;
-  }
-};

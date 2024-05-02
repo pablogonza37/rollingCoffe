@@ -58,7 +58,7 @@ const Administrador = ({ tipo }) => {
         </thead>
         <tbody>
           {data.map((item) => (
-            <React.Fragment key={item.id}>
+            <React.Fragment key={item._id}>
               {tipo === "usuarios" ? (
                 <ItemUsuario usuario={item} setData={setData} />
               ) : (

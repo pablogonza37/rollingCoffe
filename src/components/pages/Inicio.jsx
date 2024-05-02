@@ -55,7 +55,7 @@ const Inicio = () => {
       <Row className="d-flex justify-content-center mt-4">
       {productosInicio.map((productosInicio) => (
             <CardProducto
-              key={productosInicio.id}
+              key={productosInicio._id}
               producto={productosInicio}
               productosInicio={productosInicio}
             ></CardProducto>

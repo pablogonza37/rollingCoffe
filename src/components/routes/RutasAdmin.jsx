@@ -21,7 +21,7 @@ const RutasAdmin = ({usuarioLogueado}) => {
         />
         <Route
           exact
-          path="/crear"
+          path="productos/crear"
           element={
             <FormularioProducto
               editar={false}

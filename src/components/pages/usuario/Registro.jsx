@@ -6,7 +6,7 @@ import { crearUsuarioAPI, editarUsuarioAPI, leerUsuariosAPI, obtenerUsuarioAPI }
 import { useEffect, useState } from "react";
 
 const Registro = ( {usuarioLogueado, rol, titulo, editar} ) => {
-  const [rolPorDefecto] = useState("usuario");
+  const [rolPorDefecto] = useState("admin");
   const [rolVisible] = useState(editar || rol);
   const navegacion = useNavigate();
   const { id } = useParams();

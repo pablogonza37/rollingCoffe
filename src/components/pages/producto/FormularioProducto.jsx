@@ -53,7 +53,7 @@ const FormularioProducto = ({ editar, titulo }) => {
           text: `El producto "${producto.nombreProducto}" fue modificado correctamente`,
           icon: "success",
         });
-        navegacion("/administrador");
+        navegacion("/administrador/productos");
       } else {
         Swal.fire({
           title: "Ocurrio un error!",
@@ -204,9 +204,9 @@ const FormularioProducto = ({ editar, titulo }) => {
                   "La descripción amplia debe tener al menos 50 caracteres",
               },
               maxLength: {
-                value: 500,
+                value: 300,
                 message:
-                  "La descripción amplia debe tener como maximo 500 caracteres",
+                  "La descripción amplia debe tener como maximo 300 caracteres",
               },
             })}
           />

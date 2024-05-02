@@ -1,8 +1,8 @@
 import { Button, Card, Form, Col, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { login } from "../../../helpers/queries";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../../helpers/queries";
 
 const Login = ({ setUsuarioLogueado }) => {
   const {
@@ -12,48 +12,40 @@ const Login = ({ setUsuarioLogueado }) => {
   } = useForm();
   const navegacion = useNavigate();
 
-  {/*const onSubmit = async (usuario) => {
+  const onSubmit = async (usuario) => {
     const respuesta = await login(usuario);
     if (respuesta.status === 200) {
       const datos = await respuesta.json();
 
       sessionStorage.setItem(
         "usuarioRollingCoffee",
-        JSON.stringify({ email: datos.email, token: datos.token, rol:datos.rol, suspendido:datos.suspendido })
+        JSON.stringify({
+          email: datos.email,
+          token: datos.token,
+          rol: datos.rol,
+          suspendido: datos.suspendido,
+        })
       );
       setUsuarioLogueado(datos);
-      if (datos.rol === 'admin') {
-        Swal.fire("¡Bienvenido!", "Has iniciado sesión correctamente", "success");
+      if (datos.rol === "admin") {
+        Swal.fire(
+          "¡Bienvenido!",
+          "Has iniciado sesión correctamente",
+          "success"
+        );
         navegacion("/administrador/productos");
       } else {
-        Swal.fire("¡Bienvenido!", "Has iniciado sesión correctamente", "success");
+        Swal.fire(
+          "¡Bienvenido!",
+          "Has iniciado sesión correctamente",
+          "success"
+        );
         navegacion("/");
       }
-    
     } else {
       Swal.fire("Ocurrió un error", "Correo o contraseña incorrectos", "error");
     }
-  };*/}
-
-
-  
-    const onSubmit = (usuario) => {
-      if (login(usuario)) {
-        Swal.fire({
-          title: "Usuario logueado",
-          text: `Bienvenido "${usuario.mail}"`,
-          icon: "success",
-        });
-        navegacion('/administrador/usuarios');
-        setUsuarioLogueado(usuario.mail);
-      } else {
-        Swal.fire({
-          title: "Ocurrio un error",
-          text: "El ususario o password son incorrectos",
-          icon: "error",
-        });
-      }
-    };
+  };
 
   return (
     <Container className="mainSection my-5 d-flex justify-content-center">
@@ -72,7 +64,7 @@ const Login = ({ setUsuarioLogueado }) => {
               <Form.Control
                 type="email"
                 placeholder="name@example.com"
-                {...register("mail", {
+                {...register("email", {
                   required: "Email es requerido",
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -81,7 +73,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 })}
               />
               <Form.Text className="text-danger">
-                {errors.mail?.message}
+                {errors.email?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
@@ -104,9 +96,9 @@ const Login = ({ setUsuarioLogueado }) => {
               </Col>
             </Form.Group>
             <div className="d-flex justify-content-center mt-4">
-            <Button variant="success" type="submit" className="w-100">
-              Ingresar
-            </Button>
+              <Button variant="success" type="submit" className="w-100">
+                Ingresar
+              </Button>
             </div>
           </Form>
         </Card.Body>

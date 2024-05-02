@@ -16,7 +16,7 @@ const ItemUsuario = ({ usuario, setData}) => {
       cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const respuesta = await borrarUsuarioAPI(usuario.id);
+        const respuesta = await borrarUsuarioAPI(usuario._id);
         if (respuesta.status === 200) {
           Swal.fire({
             title: "UsuarioEliminado",
@@ -46,7 +46,7 @@ const ItemUsuario = ({ usuario, setData}) => {
       <td className="text-center">
         <Link
           className="btn btn-warning me-1"
-          to={`/administrador/usuarios/editar/${usuario.id}`}
+          to={`/administrador/usuarios/editar/${usuario._id}`}
         >
           <i className="bi bi-pencil-square"></i>
         </Link>
