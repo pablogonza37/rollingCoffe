@@ -37,7 +37,6 @@ const ItemUsuario = ({ usuario, setData}) => {
     });
   };
 
-
   return (
     <tr>
       <td>{usuario.nombreUsuario}</td>
@@ -51,7 +50,7 @@ const ItemUsuario = ({ usuario, setData}) => {
         >
           <i className="bi bi-pencil-square"></i>
         </Link>
-        <Button variant="danger" onClick={borrarUsuario}>
+        <Button variant="danger" onClick={borrarUsuario}  disabled={usuario.rol === 'admin'}>
           <i className="bi bi-trash"></i>
         </Button>
       </td>

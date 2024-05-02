@@ -24,7 +24,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+        <Menu
+          usuarioLogueado={usuarioLogueado}
+          setUsuarioLogueado={setUsuarioLogueado}
+        ></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
           <Route
@@ -35,12 +38,29 @@ function App() {
           <Route
             exact
             path="/administrador/*"
-            element={<RutasProtegidas>
-              <RutasAdmin></RutasAdmin>
-            </RutasProtegidas>}
+            element={
+              <RutasProtegidas>
+                <RutasAdmin></RutasAdmin>
+              </RutasProtegidas>
+            }
           ></Route>
-          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
-          <Route exact path="/registro" element={<Registro usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} tituloRegistro='Registro' rol={false}></Registro>}></Route>
+          <Route
+            exact
+            path="/login"
+            element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
+          ></Route>
+          <Route
+            exact
+            path="/registro"
+            element={
+              <Registro
+                usuarioLogueado={usuarioLogueado}
+                setUsuarioLogueado={setUsuarioLogueado}
+                tituloRegistro="Registro"
+                rol={false}
+              ></Registro>
+            }
+          ></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
           <Route exact path="/nosotros" element={<Nosotros></Nosotros>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>

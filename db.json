@@ -135,6 +135,14 @@
       "rol": "admin",
       "password": "Admin123",
       "suspendido": false
+    },
+    {
+      "nombreUsuario": "pablo",
+      "email": "pab.pg92@gmail.com",
+      "rol": "usuario",
+      "password": "Pablo123",
+      "suspendido": false,
+      "id": "b0b9"
     }
   ]
 }

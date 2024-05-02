@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import Administrador from "../pages/Administrador";
 import FormularioProducto from "../pages/producto/FormularioProducto";
-
+import Registro from "../pages/usuario/Registro"
 
 Routes;
 
-const RutasAdmin = () => {
+const RutasAdmin = ({usuarioLogueado}) => {
   return (
     <>
       <Routes>
@@ -31,12 +31,35 @@ const RutasAdmin = () => {
         ></Route>
         <Route
           exact
-          path="/editar/:id"
+          path="productos/editar/:id"
           element={
             <FormularioProducto
               editar={true}
               titulo="Editar Producto"
             ></FormularioProducto>
+          }
+        ></Route>
+         <Route
+            exact
+            path="/usuarios/crear"
+            element={
+              <Registro
+                editar={false}
+                rol={true}
+                titulo="Crear usuario"
+                usuarioLogueado={usuarioLogueado}
+              ></Registro>
+            }
+          ></Route>
+          <Route
+          exact
+          path="usuarios/editar/:id"
+          element={
+            <Registro
+              editar={true}
+              titulo="Editar Usuario"
+              rol=""
+            ></Registro>
           }
         ></Route>
       </Routes>

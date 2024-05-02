@@ -1,22 +1,44 @@
 import { Button, Card, Form, Col, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { crearUsuarioAPI, leerUsuariosAPI } from "../../../helpers/queries";
-import { useState } from "react";
+import { crearUsuarioAPI, editarUsuarioAPI, leerUsuariosAPI, obtenerUsuarioAPI } from "../../../helpers/queries";
+import { useEffect, useState } from "react";
 
-const Registro = ( {usuarioLogueado, rol, titulo} ) => {
-  const [rolPorDefecto] = useState("admin");
-  const [rolVisible] = useState(rol);
+const Registro = ( {usuarioLogueado, rol, titulo, editar} ) => {
+  const [rolPorDefecto] = useState("usuario");
+  const [rolVisible] = useState(editar || rol);
   const navegacion = useNavigate();
+  const { id } = useParams();
     const {
         register,
         handleSubmit,
         formState: { errors },
         watch,
+        setValue,
         reset,
       } = useForm();
 
+      useEffect(() => {
+        if (editar) {
+          cargarDatosUsuario();
+        }
+      }, [editar]);
+    
+      const cargarDatosUsuario = async () => {
+        try {
+          const respuesta = await obtenerUsuarioAPI(id);
+          if (respuesta.status === 200) {
+            const usuarioEncontrado = await respuesta.json();
+            setValue("nombreUsuario", usuarioEncontrado.nombreUsuario);
+            setValue("email", usuarioEncontrado.email);
+            setValue("rol", usuarioEncontrado.rol);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      
       const onSubmit = async (data) => {
         const usuario = {
           nombreUsuario: data.nombreUsuario,
@@ -25,7 +47,24 @@ const Registro = ( {usuarioLogueado, rol, titulo} ) => {
           password: data.password,
           suspendido: false,
         };
-    
+        if (editar) {
+          const respuesta = await editarUsuarioAPI(usuario, id);
+          if (respuesta.status === 200) {
+            Swal.fire({
+              title: "Usuario modificado",
+              text: `El usuario "${usuario.nombre}" fue modificado correctamente`,
+              icon: "success",
+            });
+            navegacion("/administrador/usuarios");
+          } else {
+            Swal.fire({
+              title: "Ocurrió un error",
+              text: `El usuario "${usuario.nombre}" no pudo ser modificado. Intente esta operación en unos minutos`,
+              icon: "error",
+            });
+          }
+        } else {
+          
         const usuarios = await leerUsuariosAPI();
         const usuarioExistente = usuarios.find((user) => user.email === usuario.email);
     
@@ -56,6 +95,7 @@ const Registro = ( {usuarioLogueado, rol, titulo} ) => {
       });
     }
       }
+    }
 
       const password = watch("password", "");
 
