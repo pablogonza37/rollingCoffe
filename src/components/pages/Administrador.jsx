@@ -6,12 +6,11 @@ import { Link } from "react-router-dom";
 import ItemUsuario from "./usuario/ItemUsuario";
 import ItemProducto from "./producto/ItemProducto";
 
-
 const Administrador = ({ tipo }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [filtrarCategoria, setFiltrarCategoria] = useState(""); 
+  const [filtrarCategoria, setFiltrarCategoria] = useState("");
 
   useEffect(() => {
     consultarAPI();
@@ -46,6 +45,25 @@ const Administrador = ({ tipo }) => {
     </div>
   ) : (
     <React.Fragment>
+      {tipo === "productos" && (
+        <div className="mb-3">
+          <label htmlFor="categoryFilter" className="mr-2">
+            Filtrar por Categoría:{" "}
+          </label>
+          <select
+            id="categoryFilter"
+            className="form-select w-50"
+            value={filtrarCategoria}
+            onChange={handleCategoryChange}
+          >
+            <option value="Todas">Todas</option>
+            <option value="Infusiones">Infusiones</option>
+            <option value="Batidos">Batidos</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
+          </select>
+        </div>
+      )}
       <Table responsive striped bordered hover className="shadow">
         <thead className="table-dark">
           <tr className="text-center">
@@ -62,7 +80,8 @@ const Administrador = ({ tipo }) => {
               {tipo === "usuarios" ? (
                 <ItemUsuario usuario={item} setData={setData} />
               ) : (
-                (filtrarCategoria === "" || item.categoria === filtrarCategoria) && (
+                (filtrarCategoria === "" ||
+                  item.categoria === filtrarCategoria) && (
                   <ItemProducto producto={item} setData={setData} />
                 )
               )}
