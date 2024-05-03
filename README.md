@@ -2,6 +2,14 @@
 
 Esta aplicación es un sistema CRUD (Crear, Leer, Actualizar, Borrar) construido con React para gestionar los productos de una cafetería. Utiliza React Hook Form para manejar los formularios, React Router DOM para la navegación y JSON Server para simular una API RESTful para el almacenamiento de datos.
 
+## Demo
+Puedes ver una demostración del proyecto en vivo en [Netlify](https://rollingcoffee.netlify.app/).
+
+### Credenciales de prueba del administrador: 
+
+- Email: admin@rollingcoffee.com
+- Contraseña: Admin123
+
 ## Funcionalidades
 
 - Crear Producto: Los administradores pueden agregar nuevos productos a la lista.
@@ -22,5 +30,8 @@ Esta aplicación es un sistema CRUD (Crear, Leer, Actualizar, Borrar) construido
 - react-router-dom: 6.22.3
 - react-sweetalert2: 0.6.0
 
-Contribuir
+## Autor
+- Pablo Gonzalez
+
+## Contribuir
 ¡Siéntete libre de contribuir al proyecto! Puedes abrir un issue o enviar un pull request.
