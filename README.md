@@ -11,26 +11,16 @@ Esta aplicación es un sistema CRUD (Crear, Leer, Actualizar, Borrar) construido
 
 
 ## Tecnologías Utilizadas
-
-- React: Biblioteca de JavaScript para construir interfaces de usuario.
-- React Hook Form: Biblioteca para manejar formularios en React de manera sencilla.
-- React Router DOM: Enrutador para navegación declarativa en aplicaciones React.
-- JSON Server: Biblioteca para crear una API RESTful a partir de un archivo JSON.
-
-
-## Instalación
-
-- Clona este repositorio: git clone https://github.com/pablogonza37/blogRecetasCocina.git
-- Navega al directorio del proyecto: cd blogRecetasCocina
-- Instala las dependencias: npm install
-- Configuración del Servidor JSON
-- Inicia el servidor JSON
-
-
-## Uso
-
-- Inicia la aplicación: npm start
-- Abre tu navegador y visita http://localhost:3000
+- bootstrap: 5.3.3
+- bootstrap-icons: 1.11.3
+- nodemailer: 6.9.13
+- react: 18.2.0
+- react-bootstrap: 2.10.2
+- react-dom: 18.2.0
+- react-hook-form: 7.51.2
+- react-modal: 3.16.1
+- react-router-dom: 6.22.3
+- react-sweetalert2: 0.6.0
 
 Contribuir
 ¡Siéntete libre de contribuir al proyecto! Puedes abrir un issue o enviar un pull request.
